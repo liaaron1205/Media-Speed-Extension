@@ -26,7 +26,7 @@ async function update_all_tabs () {
         if (tab.url.startsWith("chrome://")) {
             continue;
         }
-        if (tab.url.contains("twitch.tv") && !tab.url.contains("videos")) {
+        if (tab.url.includes("twitch.tv") && !tab.url.includes("twitch.tv/videos")) {
             continue;
         }
         if (!tab_speed[tab.id]) {
