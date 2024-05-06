@@ -26,6 +26,9 @@ async function update_all_tabs () {
         if (tab.url.startsWith("chrome://")) {
             continue;
         }
+        if (tab.url.contains("twitch.tv") && !tab.url.contains("videos")) {
+            continue;
+        }
         if (!tab_speed[tab.id]) {
             let global_speed = await chrome.storage.local.get("global_speed");
             global_speed = global_speed["global_speed"];
